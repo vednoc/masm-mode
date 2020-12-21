@@ -7,7 +7,7 @@
 ;; Homepage: https://github.com/vednoc/masm-mode
 ;; Created: December 21, 2020
 ;; Modified: December 21, 2020
-;; Version: 0.0.1
+;; Version: 0.1.0
 
 ;; This file is not part of GNU Emacs.
 
