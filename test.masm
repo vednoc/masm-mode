@@ -1,0 +1,31 @@
+# Mindustry Assembly.
+
+set danger 30 # ohno
+sensor power node1 @powerNetStored
+sensor total node1 @powerNetCapacity
+op div height power total
+op mul height height 176
+op floor height height b
+op floor power power b
+op floor total total b
+op sub oldpos pos 1
+draw color 128 255 128 255 0 0
+jump 12 greaterThan height danger
+draw color 255 64 64 255 0 0
+draw line oldpos oldh pos height 0 0
+op add pos pos 1
+draw color 80 80 100 255 0 0
+draw rect pos 0 1 176 0 0
+jump 18 lessThan pos 177
+set pos 1
+draw color 255 255 255 255 0 0
+draw line 0 danger 176 danger 0 0
+drawflush display1
+print "Power meter\n========\n\nStored: "
+print power
+print "\nCapacity: "
+print total
+printflush message1
+set oldh height
+draw color 80 80 100 255 0 0
+draw rect 0 0 5 176 0 0

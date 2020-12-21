@@ -29,6 +29,10 @@
 ;; This package provides syntax highlighting for Mindustry Assembly.
 ;; Docs: https://mindustrygame.github.io/wiki/logic/0-introduction/
 
+;; Todo:
+;; - Add highlighting for operators, command variants, etc.
+;; - Explore adding code snippets.
+
 ;;; Code:
 
 (defvar masm-keywords
