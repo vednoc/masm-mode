@@ -38,15 +38,23 @@
          (keywords-regexp (regexp-opt keywords 'words))
          (types-regexp (regexp-opt types 'words))
          (functions-regexp (regexp-opt functions 'words)))
-    `((,functions-regexp . font-lock-function-name-face)
+    `((,"#.*" 0 font-lock-comment-face)
       (,"\\b[0-9]+\\b" 0 font-lock-constant-face)
+      (,functions-regexp . font-lock-function-name-face)
       (,keywords-regexp . font-lock-keyword-face)
       (,types-regexp . font-lock-type-face))))
+
+(defvar masm-mode-syntax-table
+  (let ((table (make-syntax-table)))
+    (modify-syntax-entry ?\# ". 124b" table)
+    table)
+  "Syntax table for `masm-mode'.")
 
 ;;;###autoload
 (define-derived-mode masm-mode fundamental-mode "MASM"
   "Major mode for editing Mindustry Assembly."
-  ;; (setq font-lock-defaults 'masm-keywords))
+  (set (make-local-variable 'comment-start) "# ")
+  (set (make-local-variable 'comment-end) "")
   (setq-local font-lock-defaults '((masm-keywords))))
 
 ;;;###autoload
