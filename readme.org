@@ -1,0 +1,2 @@
+* MASM Mode
+This package provides major mode for editing [[https://mindustrygame.github.io/wiki/logic/0-introduction/][Mindustry Assembly]].
