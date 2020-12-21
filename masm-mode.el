@@ -39,6 +39,7 @@
          (types-regexp (regexp-opt types 'words))
          (functions-regexp (regexp-opt functions 'words)))
     `((,functions-regexp . font-lock-function-name-face)
+      (,"\\b[0-9]+\\b" 0 font-lock-constant-face)
       (,keywords-regexp . font-lock-keyword-face)
       (,types-regexp . font-lock-type-face))))
 
